@@ -36,15 +36,15 @@ CONTROLLER_CLOUD_CONFIG_PATH = File.expand_path("../generic/controller-install.s
 WORKER_CLOUD_CONFIG_PATH = File.expand_path("../generic/worker-install.sh")
 
 def etcdIP(num,subnet)
-  return "#{subnet}.#{num+50}"
+  return "#{subnet}.#{num+30}"
 end
 
 def controllerIP(num,subnet)
-  return "#{subnet}.#{num+100}"
+  return "#{subnet}.#{num+10}"
 end
 
 def workerIP(num,subnet)
-  return "#{subnet}.#{num+200}"
+  return "#{subnet}.#{num+50}"
 end
 
 controllerIPs = [*1..$controller_count].map{ |i| controllerIP(i,$controller_subnet) } <<  CONTROLLER_CLUSTER_IP
